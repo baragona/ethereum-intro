@@ -8,6 +8,7 @@ Intro to Ethereum Virtual Machine &amp; Smart Contracts from the ground up
   - https://github.com/ethereum/go-ethereum/wiki/Building-Ethereum
 
 ### Add some static nodes to help with ethereum network connectivity (instructions for mac os):
+(list from https://gist.github.com/rfikki/e2a8c47f4460668557b1e3ec8bae9c11#file-lightclient-peers-mainnet-latest-txt)
 
 cat > ~/Library/Ethereum/geth/static-nodes.json
 
