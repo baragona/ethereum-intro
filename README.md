@@ -49,3 +49,10 @@ In new terminal, with geth daemon running...
 ```
 geth attach
 ```
+
+
+# Run Basic Scripts
+
+```bash
+./geth_run_js get_balance.js
+```
