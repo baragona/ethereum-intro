@@ -7,7 +7,7 @@ Intro to Ethereum Virtual Machine &amp; Smart Contracts from the ground up
 * Install geth
   - https://github.com/ethereum/go-ethereum/wiki/Building-Ethereum
 
-### Add some static nodes (instructions for mac os):
+### Add some static nodes to help with ethereum network connectivity (instructions for mac os):
 
 cat > ~/Library/Ethereum/geth/static-nodes.json
 
