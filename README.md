@@ -38,7 +38,7 @@ geth --syncmode light --unlock 0
 ```
 
 ### Start JS console
-In new termainal, with geth daemon running...
+In new terminal, with geth daemon running...
 ```
 geth attach
 ```
