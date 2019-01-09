@@ -53,6 +53,14 @@ geth attach
 
 # Run Basic Scripts
 
+### Get balance
 ```bash
 ./geth_run_js get_balance.js
+```
+
+### Send from one account to another
+(Create a second account: geth account new)
+This will send .001 eth from account 0 to account 1.
+```bash
+./geth_run_js send_basic_transaction.js
 ```
