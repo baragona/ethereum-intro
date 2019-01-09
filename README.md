@@ -72,3 +72,11 @@ This will send .001 eth from account 0 to account 1.
 ```bash
 ./geth_run_js send_basic_transaction.js
 ```
+
+
+# Compile a solidity file
+Save the output to a file with ".json at the end..."
+```bash
+./compile uint256hashtable.sol > uint256hashtable.sol.json
+```
+
