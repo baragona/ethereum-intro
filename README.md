@@ -10,8 +10,15 @@ git clone git@github.com:ojotoxy/ethereum-intro.git
 cd ethereum-intro
 ```
 
-* Install geth
+* Install geth & solc (ethereum node & solidity compiler)
   - https://github.com/ethereum/go-ethereum/wiki/Building-Ethereum
+  
+```bash
+brew tap ethereum/ethereum
+brew install ethereum
+brew install solidity
+```
+
 
 ### Add some static nodes to help with ethereum network connectivity (instructions for mac os):
 (list from https://gist.github.com/rfikki/e2a8c47f4460668557b1e3ec8bae9c11#file-lightclient-peers-mainnet-latest-txt)
