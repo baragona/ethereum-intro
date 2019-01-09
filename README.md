@@ -80,3 +80,7 @@ Save the output to a file with ".json at the end..."
 ./compile uint256hashtable.sol > uint256hashtable.sol.json
 ```
 
+### View EVM disassembly instead
+```bash
+solc --optimize --asm uint256hashtable.sol
+```
