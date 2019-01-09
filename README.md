@@ -4,6 +4,12 @@ Intro to Ethereum Virtual Machine &amp; Smart Contracts from the ground up
 
 # Setup
 
+### Clone this repo
+```
+git clone git@github.com:ojotoxy/ethereum-intro.git
+cd ethereum-intro
+```
+
 * Install geth
   - https://github.com/ethereum/go-ethereum/wiki/Building-Ethereum
 
