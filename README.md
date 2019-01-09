@@ -43,6 +43,7 @@ Leave this running in a separate terminal.
 ```
 geth --syncmode light --unlock 0
 ```
+*** You need to enter the password to unlock here, otherwise no transactions can be sent... The prompt may not be obvious.
 
 ### Start JS console
 In new terminal, with geth daemon running...
