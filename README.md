@@ -1,6 +1,8 @@
 # ethereum-intro
 Intro to Ethereum Virtual Machine &amp; Smart Contracts from the ground up
 
+# Note: All instructions for macOS.
+Differences for other platforms are likely rather small.
 
 # Setup
 
@@ -97,6 +99,8 @@ This will create the contract from account 0, calling solc for you internally...
 ```bash
 node deploy_contract.js uint256hashtable.sol Uint256HashTable
 ```
+
+# Interact with a contract
 
 ### View EVM disassembly instead
 ```bash
