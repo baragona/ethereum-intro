@@ -100,7 +100,12 @@ This will create the contract from account 0, calling solc for you internally...
 node deploy_contract.js uint256hashtable.sol Uint256HashTable
 ```
 
-# Interact with a contract
+# Basic Interaction with a contract
+
+# Publish a token contract
+```bash
+node deploy_contract.js erc20token.sol ERC20Token '[1000000000000,"CoinyCoin",0,"CC"]'
+```
 
 ### View EVM disassembly instead
 ```bash
