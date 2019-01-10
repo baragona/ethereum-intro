@@ -88,9 +88,14 @@ node send_basic_transaction.js
 
 
 # Compile a solidity file
-Save the output to a file with ".json at the end..."
 ```bash
-./compile uint256hashtable.sol > uint256hashtable.sol.json
+./compile uint256hashtable.sol
+```
+
+# Publish a contract
+This will create the contract from account 0, calling solc for you internally...
+```bash
+node deploy_contract.js uint256hashtable.sol Uint256HashTable
 ```
 
 ### View EVM disassembly instead
