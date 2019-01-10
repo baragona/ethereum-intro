@@ -66,7 +66,7 @@ geth attach
 
 ### Get balance
 ```bash
-./geth_run_js get_balance.js
+node get_balance.js
 ```
 
 ### Send from one account to another
