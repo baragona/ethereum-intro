@@ -1,9 +1,4 @@
-const homedir = require('os').homedir();
-
-var Web3 = require('web3');
-var net = require('net');
-
-var web3 = new Web3(homedir+'/Library/Ethereum/geth.ipc', net);
+var { web3, Web3 } = require('./local_geth_connect');
 var eth = web3.eth;
 
 (async function(){
