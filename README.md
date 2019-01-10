@@ -4,14 +4,24 @@ Intro to Ethereum Virtual Machine &amp; Smart Contracts from the ground up
 
 # Setup
 
+* Install nodejs and npm
+
 ### Clone this repo
 ```
 git clone git@github.com:ojotoxy/ethereum-intro.git
 cd ethereum-intro
+npm install
 ```
 
-* Install geth
+* Install geth & solc (ethereum node & solidity compiler)
   - https://github.com/ethereum/go-ethereum/wiki/Building-Ethereum
+  
+```bash
+brew tap ethereum/ethereum
+brew install ethereum
+brew install solidity
+```
+
 
 ### Add some static nodes to help with ethereum network connectivity (instructions for mac os):
 (list from https://gist.github.com/rfikki/e2a8c47f4460668557b1e3ec8bae9c11#file-lightclient-peers-mainnet-latest-txt)
@@ -64,4 +74,16 @@ geth attach
 This will send .001 eth from account 0 to account 1.
 ```bash
 ./geth_run_js send_basic_transaction.js
+```
+
+
+# Compile a solidity file
+Save the output to a file with ".json at the end..."
+```bash
+./compile uint256hashtable.sol > uint256hashtable.sol.json
+```
+
+### View EVM disassembly instead
+```bash
+solc --optimize --asm uint256hashtable.sol
 ```
