@@ -4,10 +4,13 @@ Intro to Ethereum Virtual Machine &amp; Smart Contracts from the ground up
 
 # Setup
 
+* Install nodejs and npm
+
 ### Clone this repo
 ```
 git clone git@github.com:ojotoxy/ethereum-intro.git
 cd ethereum-intro
+npm install
 ```
 
 * Install geth & solc (ethereum node & solidity compiler)
