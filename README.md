@@ -56,9 +56,19 @@ geth --syncmode light --unlock 0
 *** You need to enter the password to unlock here, otherwise no transactions can be sent... The prompt may not be obvious.
 
 ### Start JS console
-In new terminal, with geth daemon running...
-```
+In new terminal, with geth daemon running... Note this is not Node.js and the environment is quite differnent.
+```bash
 geth attach
+```
+
+For a similar Node.js environment:
+```
+node
+
+Paste in:
+var { web3, Web3 } = require('./local_geth_connect');
+var eth = web3.eth;
+
 ```
 
 
