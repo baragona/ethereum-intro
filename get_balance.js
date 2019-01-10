@@ -14,6 +14,7 @@ var eth = web3.eth;
 
     }catch(e){
         console.log('caught error', e);
+        process.exit();
     }
 
 })();
