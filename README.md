@@ -73,7 +73,7 @@ node get_balance.js
 (Create a second account: geth account new)
 This will send .001 eth from account 0 to account 1.
 ```bash
-./geth_run_js send_basic_transaction.js
+node send_basic_transaction.js
 ```
 
 
