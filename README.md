@@ -1,6 +1,8 @@
 # ethereum-intro
 Intro to Ethereum Virtual Machine &amp; Smart Contracts from the ground up
 
+# Note: All instructions for macOS.
+Differences for other platforms are likely rather small.
 
 # Setup
 
@@ -48,17 +50,51 @@ add content:
 geth account new
 ```
 
+Test net in this case is rinkeby.
+New TestNet Account:
+```
+geth --rinkeby account new
+```
+
+### Get some ether
+
+For main net this means real $$$.
+
+For Rinkeby Test net, you can get some at the faucet:
+https://faucet.rinkeby.io/
+
 ### Start geth daemon
 Leave this running in a separate terminal.
+Main net:
 ```
 geth --syncmode light --unlock 0
 ```
 *** You need to enter the password to unlock here, otherwise no transactions can be sent... The prompt may not be obvious.
 
-### Start JS console
-In new terminal, with geth daemon running...
+Testnet:
 ```
+geth --rinkeby --syncmode light --unlock 0
+```
+
+### Start JS console
+In new terminal, with geth daemon running... Note this is not Node.js and the environment is quite different.
+Mainnet:
+```bash
 geth attach
+```
+Testnet:
+```
+geth --rinkeby attach
+```
+
+For a similar Node.js environment:
+```
+CHAIN=rinkeby node
+
+Paste in:
+var { web3, Web3 } = require('./local_geth_connect');
+var eth = web3.eth;
+
 ```
 
 
@@ -66,24 +102,38 @@ geth attach
 
 ### Get balance
 ```bash
-./geth_run_js get_balance.js
+node get_balance.js
 ```
 
 ### Send from one account to another
 (Create a second account: geth account new)
 This will send .001 eth from account 0 to account 1.
 ```bash
-./geth_run_js send_basic_transaction.js
+CHAIN=rinkeby node send_basic_transaction.js
 ```
 
 
 # Compile a solidity file
-Save the output to a file with ".json at the end..."
 ```bash
-./compile uint256hashtable.sol > uint256hashtable.sol.json
+./compile uint256hashtable.sol
 ```
+
 
 ### View EVM disassembly instead
 ```bash
 solc --optimize --asm uint256hashtable.sol
+```
+
+
+# Publish a contract
+This will create the contract from account 0, calling solc for you internally...
+```bash
+CHAIN=rinkeby node deploy_contract.js uint256hashtable.sol Uint256HashTable
+```
+
+# Basic Interaction with a contract
+
+# Publish a token contract
+```bash
+CHAIN=rinkeby node deploy_contract.js erc20token.sol ERC20Token '[1000000000000,"CoinyCoin",0,"CC"]'
 ```
