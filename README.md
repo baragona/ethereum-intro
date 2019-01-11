@@ -50,22 +50,46 @@ add content:
 geth account new
 ```
 
+Test net in this case is rinkeby.
+New TestNet Account:
+```
+geth --rinkeby account new
+```
+
+### Get some ether
+
+For main net this means real $$$.
+
+For Rinkeby Test net, you can get some at the faucet:
+https://faucet.rinkeby.io/
+
 ### Start geth daemon
 Leave this running in a separate terminal.
+Main net:
 ```
 geth --syncmode light --unlock 0
 ```
 *** You need to enter the password to unlock here, otherwise no transactions can be sent... The prompt may not be obvious.
 
+Testnet:
+```
+geth --rinkeby --syncmode light --unlock 0
+```
+
 ### Start JS console
-In new terminal, with geth daemon running... Note this is not Node.js and the environment is quite differnent.
+In new terminal, with geth daemon running... Note this is not Node.js and the environment is quite different.
+Mainnet:
 ```bash
 geth attach
+```
+Testnet:
+```
+geth --rinkeby attach
 ```
 
 For a similar Node.js environment:
 ```
-node
+CHAIN=rinkeby node
 
 Paste in:
 var { web3, Web3 } = require('./local_geth_connect');
@@ -85,7 +109,7 @@ node get_balance.js
 (Create a second account: geth account new)
 This will send .001 eth from account 0 to account 1.
 ```bash
-node send_basic_transaction.js
+CHAIN=rinkeby node send_basic_transaction.js
 ```
 
 
@@ -94,20 +118,22 @@ node send_basic_transaction.js
 ./compile uint256hashtable.sol
 ```
 
+
+### View EVM disassembly instead
+```bash
+solc --optimize --asm uint256hashtable.sol
+```
+
+
 # Publish a contract
 This will create the contract from account 0, calling solc for you internally...
 ```bash
-node deploy_contract.js uint256hashtable.sol Uint256HashTable
+CHAIN=rinkeby node deploy_contract.js uint256hashtable.sol Uint256HashTable
 ```
 
 # Basic Interaction with a contract
 
 # Publish a token contract
 ```bash
-node deploy_contract.js erc20token.sol ERC20Token '[1000000000000,"CoinyCoin",0,"CC"]'
-```
-
-### View EVM disassembly instead
-```bash
-solc --optimize --asm uint256hashtable.sol
+CHAIN=rinkeby node deploy_contract.js erc20token.sol ERC20Token '[1000000000000,"CoinyCoin",0,"CC"]'
 ```
