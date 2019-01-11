@@ -135,5 +135,5 @@ CHAIN=rinkeby node deploy_contract.js uint256hashtable.sol Uint256HashTable
 
 # Publish a token contract
 ```bash
-CHAIN=rinkeby node deploy_contract.js erc20token.sol ERC20Token '[1000000000000,"CoinyCoin",0,"CC"]'
+CHAIN=rinkeby node deploy_contract.js erc20token.sol ERC20Token '["1000000000000","CoinyCoin","1","CC"]'
 ```
