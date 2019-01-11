@@ -3,15 +3,7 @@
 var { web3, Web3 } = require('./local_geth_connect');
 var eth = web3.eth;
 
-var fs = require('fs');
-var shell = require('shelljs');
-
-function compile(filename){
-    console.log('Compiling...');
-    var compiledOutput = shell.exec('solc --optimize --combined-json abi,bin,interface '+filename).stdout;
-    return compiledOutput;
-}
-
+var {compile} = require('./compiler');
 
 (async function(){
     try{
@@ -22,6 +14,13 @@ function compile(filename){
         //var filename = process.argv[2];
         var filename = process.argv[2];
         var classname = process.argv[3];
+
+        var arguments_json = process.argv[4];
+        var args = [];
+        if(arguments_json){
+            args = JSON.parse(arguments_json);
+            console.log('got arguments:', args);
+        }
 
         var contract_name = filename+":"+classname;
 
@@ -35,8 +34,7 @@ function compile(filename){
         var contractObj = new eth.Contract(JSON.parse(abi_json), {});
 
         console.log('publishing contract...');
-
-        var newContractInstance = await contractObj.deploy({  data: "0x" + contractCompiled.contracts[contract_name].bin})
+        var newContractInstance = await contractObj.deploy({  data: "0x" + contractCompiled.contracts[contract_name].bin, arguments: args})
             .send({from: sender, gas: 4700000})
             .on('error', function(error){ console.log('error deploying', error) })
             .on('transactionHash', function(transactionHash){ console.log('got tx hash', transactionHash) })
@@ -56,12 +54,3 @@ function compile(filename){
     }
 
 })();
-
-
-
-
-
-
-
-
-
