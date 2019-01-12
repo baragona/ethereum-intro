@@ -25,6 +25,13 @@ brew install solidity
 ```
 
 
+# Other Tools
+* Remix Solidity IDE https://remix.ethereum.org/
+* Truffle framework - tooling / package manager for ethereum contract dev https://truffleframework.com 
+* Etherscan - view and interact with ethereum blockchains
+* Metamask - interact with ethereum blockchain in a browser (Etherscan can use it)
+
+ 
 ### Add some static nodes to help with ethereum network connectivity (instructions for mac os):
 (list from https://gist.github.com/rfikki/e2a8c47f4460668557b1e3ec8bae9c11#file-lightclient-peers-mainnet-latest-txt)
 
