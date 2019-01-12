@@ -4,6 +4,10 @@ Intro to Ethereum Virtual Machine &amp; Smart Contracts from the ground up
 # Note: All instructions for macOS.
 Differences for other platforms are likely rather small.
 
+main changes would be:
+* different data dir in local_geth_connect.js
+* other package manager instead of brew
+
 # Setup
 
 * Install nodejs and npm
