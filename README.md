@@ -137,14 +137,20 @@ solc --optimize --asm uint256hashtable.sol
 
 
 # Publish a contract
-This will create the contract from account 0, calling solc for you internally...
+These will create the contract from account 0, calling solc for you internally...
 ```bash
 CHAIN=rinkeby node deploy_contract.js uint256hashtable.sol Uint256HashTable
+CHAIN=rinkeby node deploy_contract.js erc20token.sol ERC20Token '["1000000000000","CoinyCoin","1","CC"]'
+CHAIN=rinkeby node deploy_contract.js escrowSimple.sol EscrowSimple '["seller address","arbiter address"]'
+CHAIN=rinkeby node deploy_contract.js timeLock.sol TimeLock
+CHAIN=rinkeby node deploy_contract.js tokenfactory.sol TokenFactory
+
+
 ```
 
 # Basic Interaction with a contract
 
 # Publish a token contract
 ```bash
-CHAIN=rinkeby node deploy_contract.js erc20token.sol ERC20Token '["1000000000000","CoinyCoin","1","CC"]'
+
 ```
