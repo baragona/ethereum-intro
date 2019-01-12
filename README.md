@@ -149,8 +149,7 @@ CHAIN=rinkeby node deploy_contract.js tokenfactory.sol TokenFactory
 ```
 
 # Basic Interaction with a contract
-
-# Publish a token contract
+This address is for Uint256HashTable ... 
 ```bash
-
+CHAIN=rinkeby node call_contract_method.js 0x756909e66153fE24D584d2B7399C954a41f71781
 ```
